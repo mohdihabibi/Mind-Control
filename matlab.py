@@ -22,18 +22,17 @@ __status__ = "Complete"
 df = pd.read_csv('/Users/Mohdi/Downloads/CMPE188/test.csv')
 
 #print the contents of the dataframe
-# print(df)
+print(df)
 
 #this will show the count of each column
-# df.count()
+df.count()
 
 # info about the dataframe
-# df.describe()
-# df.describe().transpose()
+df.describe()
+df.describe().transpose()
 
-#create another dataframe with dropping 
-# the rows contatinig empty cell
-# df2 = df.dropna()
+#create another dataframe with dropping the rows containing empty cells
+df2 = df.dropna()
 
 #another way to prepare your data is to impute it 
 #can modify the strategy
@@ -67,8 +66,8 @@ while(df.shape[0] > row ):
 	df.loc[row, "Class"] = kmean.predict(df.loc[row][:25])
 	row += 1
 
-#printing with the added column
-# print(df)
+printing with the added column
+ print(df)
 
 
 # in order to visualize our clusters, we used feature engineering and dimensionality reduction 
@@ -138,9 +137,9 @@ for n_neighbors in neighbors_settings:
     cross_fold_accuracy.append(np.average(scores))
 
 for iterator in range(len(training_accuracy)):
-	print("training accuracy is: \n", training_accuracy[iterator])
-	print("testing accuracy is: \n", test_accuracy[iterator])
-	print("cross fold accuracy is: \n", cross_fold_accuracy[iterator])
+	print("Training accuracy is: \n", training_accuracy[iterator])
+	print("Testing accuracy is: \n", test_accuracy[iterator])
+	print("Cross fold accuracy is: \n", cross_fold_accuracy[iterator])
 
 print(knnClassifier.predict(df.iloc[15, :25]))
 print(df.iloc[15, 25])
