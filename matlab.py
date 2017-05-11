@@ -15,6 +15,9 @@ from sklearn.externals import joblib
 import warnings
 warnings.filterwarnings("ignore")
 
+__author__ = "Mohdi Habibi and Amir Jabbari"
+__status__ = "Complete"
+
 #read the csv into a dataframe
 df = pd.read_csv('/Users/Mohdi/Downloads/CMPE188/test.csv')
 
